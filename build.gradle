@@ -4,62 +4,64 @@ plugins {
     id 'org.openapi.generator' version "$openApiGenVersion"
 }
 
-def apiConfigPath = project.properties["apiConfigPath"] ?: "$rootDir/cineast.json"
+def apiConfigPath = project.properties["apiConfigPath"] ?: "$rootDir/spec/vrem.json"
+def genFolder = "$rootDir/Generated"
 
 task generateOpenApi(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
     generatorName = 'csharp'
     inputSpec = apiConfigPath
     packageName = "Ch.Unibas.Dmi.Dbis.Vrem.Client"
-    outputDir = "$buildDir/Generated"
+    outputDir = "$genFolder"
 
     skipValidateSpec = true
 }
 
 task clean(type: Delete) {
-    delete "$rootDir/Generated", fileTree("$rootDir/Runtime/Libs") { include "**/*.dll", "**/*.xml", "**/*.meta" }
+    delete "$genFolder"
 }
 
 /* Task to clean only unused files */
 task tidy(type: Delete) {
-    delete "$rootDir/Generated"
+    delete "$genFolder"
 }
 
 /* Build the openapi dll */
 task buildOpenApi(type: Exec) {
-    dependsOn tasks.openApiGenerate
-    workingDir "$rootDir/Generated"
+    dependsOn tasks.generateOpenApi
+    workingDir "$genFolder"
     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-        /* only windows */
-        commandLine = "$rootDir/Generated/build.bat"
+        commandLine = "$genFolder.bat"
     } else {
-        /* Should work with .sh */
         dependsOn "modex"
-        commandLine = "$rootDir/Generated/build.sh"
+        commandLine = "$genFolder/build.sh"
     }
 }
 
 task modex(type: Exec) {
-    workingDir "$rootDir/Generated"
+    workingDir "$genFolder"
+
     if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
         /* Should work with .sh */
         commandLine "chmod", "+x", "$rootDir/Generated/build.sh"
     }
 }
 
-
-/* Copy what buildOpenApi produced to unity folder */
 task deployLibs(type: Copy) {
     from(file("$rootDir/Generated/bin"))
     into(file("$rootDir/Runtime/Libs"))
 }
 
-/* Copy the mandatory link.xml */
 task deployLink(type: Copy) {
     from file("$rootDir/link.xml")
     into(file("$rootDir/Runtime/Libs"))
 }
 
-/* Do all the things */
 task('deploy') {
     dependsOn 'deployLink'
 }
+
+deployLibs.dependsOn buildOpenApi
+deployLink.dependsOn deployLibs
+tasks.openApiGenerate.mustRunAfter clean
+buildOpenApi.mustRunAfter tasks.openApiGenerate
+modex.mustRunAfter tasks.openApiGenerate

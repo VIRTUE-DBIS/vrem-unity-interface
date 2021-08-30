@@ -1,4 +1,12 @@
+# Project.
+Generated/
+Runtime/
+
+# IntelliJ.
 .idea/
+out/
+
+# Gradle.
 .gradle/
 build/
-out/
+!gradle-wrapper.jar
