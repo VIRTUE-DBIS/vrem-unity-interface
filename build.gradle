@@ -1,0 +1,65 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+plugins {
+    id 'org.openapi.generator' version "$openApiGenVersion"
+}
+
+def apiConfigPath = project.properties["apiConfigPath"] ?: "$rootDir/cineast.json"
+
+task generateOpenApi(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
+    generatorName = 'csharp'
+    inputSpec = apiConfigPath
+    packageName = "Ch.Unibas.Dmi.Dbis.Vrem.Client"
+    outputDir = "$buildDir/Generated"
+
+    skipValidateSpec = true
+}
+
+task clean(type: Delete) {
+    delete "$rootDir/Generated", fileTree("$rootDir/Runtime/Libs") { include "**/*.dll", "**/*.xml", "**/*.meta" }
+}
+
+/* Task to clean only unused files */
+task tidy(type: Delete) {
+    delete "$rootDir/Generated"
+}
+
+/* Build the openapi dll */
+task buildOpenApi(type: Exec) {
+    dependsOn tasks.openApiGenerate
+    workingDir "$rootDir/Generated"
+    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        /* only windows */
+        commandLine = "$rootDir/Generated/build.bat"
+    } else {
+        /* Should work with .sh */
+        dependsOn "modex"
+        commandLine = "$rootDir/Generated/build.sh"
+    }
+}
+
+task modex(type: Exec) {
+    workingDir "$rootDir/Generated"
+    if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
+        /* Should work with .sh */
+        commandLine "chmod", "+x", "$rootDir/Generated/build.sh"
+    }
+}
+
+
+/* Copy what buildOpenApi produced to unity folder */
+task deployLibs(type: Copy) {
+    from(file("$rootDir/Generated/bin"))
+    into(file("$rootDir/Runtime/Libs"))
+}
+
+/* Copy the mandatory link.xml */
+task deployLink(type: Copy) {
+    from file("$rootDir/link.xml")
+    into(file("$rootDir/Runtime/Libs"))
+}
+
+/* Do all the things */
+task('deploy') {
+    dependsOn 'deployLink'
+}
