@@ -324,35 +324,46 @@
         "summary": "Generates a new room with the specified parameters.",
         "operationId": "postApiGenerateRoom",
         "requestBody": {
+          "description": "The generation configuration object as JSON string.",
           "content": {
-            "application/x-www-form-urlencoded": {
+            "application/json": {
               "schema": {
-                "required": [
-                  "genType"
-                ],
-                "type": "object",
-                "properties": {
-                  "genType": {
-                    "type": "string",
-                    "enum": [
-                      "SEMANTIC_SOM",
-                      "VISUAL_SOM",
-                      "SEMANTIC_SIMILARITY",
-                      "VISUAL_SIMILARITY",
-                      "RANDOM"
-                    ]
-                  }
-                }
+                "$ref": "#/components/schemas/GenerationRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
           },
-          "404": {
-            "description": "Not Found"
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
           }
         }
       }
@@ -365,35 +376,46 @@
         "summary": "Generates a new exhibition with the specified parameters.",
         "operationId": "postApiGenerateExhibition",
         "requestBody": {
+          "description": "The generation configuration object as JSON string.",
           "content": {
-            "application/x-www-form-urlencoded": {
+            "application/json": {
               "schema": {
-                "required": [
-                  "genType"
-                ],
-                "type": "object",
-                "properties": {
-                  "genType": {
-                    "type": "string",
-                    "enum": [
-                      "SEMANTIC_SOM",
-                      "VISUAL_SOM",
-                      "SEMANTIC_SIMILARITY",
-                      "VISUAL_SIMILARITY",
-                      "RANDOM"
-                    ]
-                  }
-                }
+                "$ref": "#/components/schemas/GenerationRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
           },
-          "404": {
-            "description": "Not Found"
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
           }
         }
       }
@@ -669,6 +691,46 @@
             "items": {
               "$ref": "#/components/schemas/Exhibit"
             }
+          }
+        }
+      },
+      "GenerationRequest": {
+        "required": [
+          "genType",
+          "height",
+          "idList",
+          "seed",
+          "width"
+        ],
+        "type": "object",
+        "properties": {
+          "genType": {
+            "type": "string",
+            "enum": [
+              "SEMANTIC_SOM",
+              "VISUAL_SOM",
+              "SEMANTIC_SIMILARITY",
+              "VISUAL_SIMILARITY",
+              "RANDOM"
+            ]
+          },
+          "idList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "width": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seed": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       }
