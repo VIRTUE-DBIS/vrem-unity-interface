@@ -108,8 +108,8 @@
               }
             }
           },
-          "400": {
-            "description": "Bad Request",
+          "403": {
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
@@ -118,8 +118,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "application/json": {
                 "schema": {
@@ -293,8 +293,8 @@
               }
             }
           },
-          "400": {
-            "description": "Bad Request",
+          "403": {
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
@@ -303,8 +303,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "application/json": {
                 "schema": {
@@ -340,13 +340,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseMessage"
+                  "$ref": "#/components/schemas/Room"
                 }
               }
             }
           },
-          "400": {
-            "description": "Bad Request",
+          "403": {
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
@@ -355,8 +355,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "application/json": {
                 "schema": {
@@ -392,13 +392,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseMessage"
+                  "$ref": "#/components/schemas/Exhibition"
                 }
               }
             }
           },
-          "400": {
-            "description": "Bad Request",
+          "403": {
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
@@ -407,8 +407,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "application/json": {
                 "schema": {
@@ -590,19 +590,15 @@
       "Room": {
         "required": [
           "ceiling",
-          "east",
           "entryPoint",
           "exhibits",
           "floor",
           "id",
           "metadata",
-          "north",
           "position",
           "size",
-          "south",
           "text",
-          "walls",
-          "west"
+          "walls"
         ],
         "type": "object",
         "properties": {
@@ -647,18 +643,6 @@
             "additionalProperties": {
               "type": "string"
             }
-          },
-          "north": {
-            "$ref": "#/components/schemas/Wall"
-          },
-          "east": {
-            "$ref": "#/components/schemas/Wall"
-          },
-          "south": {
-            "$ref": "#/components/schemas/Wall"
-          },
-          "west": {
-            "$ref": "#/components/schemas/Wall"
           }
         }
       },
