@@ -1,6 +1,6 @@
 # Project.
-Generated/
-Runtime/
+generated/
+Vrem-Client/
 
 # IntelliJ.
 .idea/

@@ -1,0 +1,13 @@
+{
+  "name": "ch.unibas.dmi.dbis.vrem.client",
+  "version": "0.0.0-SNAPSHOT",
+  "displayName": "VREM Unity Interface",
+  "description": "",
+  "unity": "2020.3",
+  "keywords": [],
+  "author": {
+    "name": "Simon Peterhans",
+    "email": "simon.peterhans@unibas.ch"
+  }
+}
+

@@ -4,13 +4,14 @@ plugins {
     id 'org.openapi.generator' version "$openApiGenVersion"
 }
 
-def genFolder = "$rootDir/Generated"
-def rtFolder = "$rootDir/Runtime"
-def apiConfigPath = project.properties["apiConfigPath"] ?: "$rootDir/oas/vrem-oas.json"
+def genFolder = "$rootDir/generated"
+def docsFolder = "$rootDir/docs"
+def clientFolder = "$rootDir/Vrem-Client"
+def rtFolder = "$clientFolder/Runtime"
 
 task clean(type: Delete) {
     delete "$genFolder"
-    delete "$rtFolder"
+    delete "$clientFolder"
 }
 
 task tidy(type: Delete) {
@@ -19,7 +20,7 @@ task tidy(type: Delete) {
 
 task generateOpenApi(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
     generatorName = 'csharp'
-    inputSpec = apiConfigPath
+    inputSpec = "$docsFolder/vrem-oas.json"
     packageName = "Ch.Unibas.Dmi.Dbis.Vrem.Client"
     outputDir = "$genFolder"
 
@@ -58,7 +59,7 @@ task deployLibs(type: Copy) {
     dependsOn buildOpenApi
 
     from file("$genFolder/bin")
-    into file("$rtFolder/Libs")
+    into file("$rtFolder")
 
     // Automatically rename everything to prevent Unity from identifying packages as duplicates.
     rename('(.*)\\.([a-zA-Z0-9_-]*)', '$1.Vrem.$2')
@@ -67,16 +68,23 @@ task deployLibs(type: Copy) {
 task deployLink(type: Copy) {
     dependsOn buildOpenApi
 
-    from file("$rootDir/link.xml")
-    into file("$rtFolder/Libs")
+    from file("$docsFolder/link.xml")
+    into file("$rtFolder")
+}
+
+task deployPackage(type: Copy) {
+    dependsOn buildOpenApi
+
+    from file("$docsFolder/package.json")
+    into file("$clientFolder")
 }
 
 task deployAll {
     dependsOn deployLibs
     dependsOn deployLink
+    dependsOn deployPackage
 }
 
 task('deploy') {
     dependsOn deployAll
-    finalizedBy tidy
 }
