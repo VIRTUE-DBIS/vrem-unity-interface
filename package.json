@@ -2,9 +2,9 @@
   "name": "ch.unibas.dmi.dbis.vrem.client",
   "version": "0.0.0-SNAPSHOT",
   "displayName": "VREM Unity Interface",
-  "description": "",
+  "description": "OpenAPI-generated client for the Virtual Exhibition Manager server API.",
   "unity": "2020.3",
-  "keywords": [],
+  "keywords": ["VREM", "Virtual Exhibition", "Virtual Exhibition Manager"],
   "author": {
     "name": "Simon Peterhans",
     "email": "simon.peterhans@unibas.ch"
