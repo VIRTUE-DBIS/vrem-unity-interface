@@ -1,0 +1,24 @@
+<linker>
+    <!-- Json.NET Compatibility -->
+    <!-- 
+    These are required for Json.NET and the VREM API to work in IL2CPP
+    because IL2CPP strips certain code which causes JSON serialization to fail.
+    The "netstandard2.0" version of Newtonsoft.Json must be used!
+    -->
+    <assembly fullname="RestSharp.Vrem">
+        <type fullname="*" preserve="all"/>
+    </assembly>
+    <assembly fullname="Newtonsoft.Json">
+        <type fullname="*" preserve="all"/>
+    </assembly>
+    <assembly fullname="JsonSubTypes">
+        <type fullname="*" preserve="all"/>
+    </assembly>
+    <assembly fullname="Ch.Unibas.Dmi.Dbis.Vrem.Client">
+        <type fullname="*" preserve="all"/>
+    </assembly>
+    <assembly fullname="System.Core">
+        <type fullname="System.Linq.Expressions.Interpreter.LightLambda" preserve="all"/>
+    </assembly>
+    <!-- Json.NET Compatibility -->
+</linker>

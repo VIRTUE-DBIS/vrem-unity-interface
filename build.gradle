@@ -5,22 +5,17 @@ plugins {
 }
 
 def genFolder = "$rootDir/generated"
-def docsFolder = "$rootDir/docs"
-def clientFolder = "$rootDir/Vrem-Client"
-def rtFolder = "$clientFolder/Runtime"
+def rtFolder = "$rootDir/Runtime"
 
 task clean(type: Delete) {
     delete "$genFolder"
-    delete "$clientFolder"
-}
-
-task tidy(type: Delete) {
-    delete "$genFolder"
+    delete "$rtFolder"
+    delete fileTree("$rootDir") { include "*.meta" }
 }
 
 task generateOpenApi(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
     generatorName = 'csharp'
-    inputSpec = "$docsFolder/vrem-oas.json"
+    inputSpec = "vrem-oas.json"
     packageName = "Ch.Unibas.Dmi.Dbis.Vrem.Client"
     outputDir = "$genFolder"
 
@@ -76,23 +71,18 @@ task deployLibs(type: Copy) {
 task deployLink(type: Copy) {
     dependsOn buildOpenApi
 
-    from file("$docsFolder/link.xml")
+    from file("link.xml")
     into file("$rtFolder")
 }
 
-task deployPackage(type: Copy) {
-    dependsOn buildOpenApi
-
-    from file("$docsFolder/package.json")
-    into file("$clientFolder")
-}
-
-task deployAll {
+task deploy {
     dependsOn deployLibs
     dependsOn deployLink
-    dependsOn deployPackage
 }
 
-task deploy {
-    dependsOn deployAll
+task deployAndTidy(type: Delete) {
+    dependsOn deploy
+    mustRunAfter deploy
+
+    delete "$genFolder"
 }
