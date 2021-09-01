@@ -55,8 +55,16 @@ task buildOpenApi(type: Exec) {
     }
 }
 
+task purgeLibs(type: Delete) {
+    mustRunAfter buildOpenApi
+
+    delete "$genFolder/bin/JsonSubTypes.dll"
+    delete "$genFolder/bin/Newtonsoft.Json.dll"
+}
+
 task deployLibs(type: Copy) {
     dependsOn buildOpenApi
+    dependsOn purgeLibs
 
     from file("$genFolder/bin")
     into file("$rtFolder")
@@ -85,6 +93,6 @@ task deployAll {
     dependsOn deployPackage
 }
 
-task('deploy') {
+task deploy {
     dependsOn deployAll
 }

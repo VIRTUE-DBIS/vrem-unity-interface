@@ -8,10 +8,10 @@
     <assembly fullname="RestSharp.Vrem">
         <type fullname="*" preserve="all"/>
     </assembly>
-    <assembly fullname="Newtonsoft.Json.Vrem">
+    <assembly fullname="Newtonsoft.Json">
         <type fullname="*" preserve="all"/>
     </assembly>
-    <assembly fullname="JsonSubTypes.Vrem">
+    <assembly fullname="JsonSubTypes">
         <type fullname="*" preserve="all"/>
     </assembly>
     <assembly fullname="Ch.Unibas.Dmi.Dbis.Vrem.Client">
