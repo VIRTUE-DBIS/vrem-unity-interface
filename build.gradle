@@ -10,7 +10,7 @@ def rtFolder = "$rootDir/Runtime"
 task clean(type: Delete) {
     delete "$genFolder"
     delete "$rtFolder"
-    delete fileTree("$rootDir") { include "*.meta" }
+    delete fileTree("$rootDir") { include "**/*.meta" }
 }
 
 task generateOpenApi(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
