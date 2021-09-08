@@ -436,8 +436,8 @@
       },
       "Exhibit": {
         "required": [
+          "_id",
           "description",
-          "id",
           "light",
           "metadata",
           "name",
@@ -448,7 +448,7 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
+          "_id": {
             "type": "string"
           },
           "name": {
@@ -556,15 +556,15 @@
       },
       "Exhibition": {
         "required": [
+          "_id",
           "description",
-          "id",
           "metadata",
           "name",
           "rooms"
         ],
         "type": "object",
         "properties": {
-          "id": {
+          "_id": {
             "type": "string"
           },
           "name": {
@@ -589,11 +589,11 @@
       },
       "Room": {
         "required": [
+          "_id",
           "ceiling",
           "entryPoint",
           "exhibits",
           "floor",
-          "id",
           "metadata",
           "position",
           "size",
@@ -602,7 +602,7 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
+          "_id": {
             "type": "string"
           },
           "text": {
