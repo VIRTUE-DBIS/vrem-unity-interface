@@ -762,95 +762,183 @@
              Represents a collection of functions to interact with the API endpoints
              </summary>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateExhibition(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateExhibition">
              <summary>
-             Generates a new exhibition with the specified parameters.
+             Generates a new, empty exhibition.
              </summary>
              <remarks>
              
              </remarks>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
              <returns>Exhibition</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateExhibitionWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateExhibitionWithHttpInfo">
              <summary>
-             Generates a new exhibition with the specified parameters.
+             Generates a new, empty exhibition.
              </summary>
              <remarks>
              
              </remarks>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
              <returns>ApiResponse of Exhibition</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoom(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomRandom(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest)">
              <summary>
-             Generates a new room with the specified parameters.
+             Generates a new room of random exhibits with the specified parameters.
              </summary>
              <remarks>
              
              </remarks>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
+             <param name="randomGenerationRequest">The generation configuration object as JSON string.</param>
              <returns>Room</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomRandomWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest)">
              <summary>
-             Generates a new room with the specified parameters.
+             Generates a new room of random exhibits with the specified parameters.
              </summary>
              <remarks>
              
              </remarks>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
+             <param name="randomGenerationRequest">The generation configuration object as JSON string.</param>
              <returns>ApiResponse of Room</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateExhibitionAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest,System.Threading.CancellationToken)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomSimilar(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest)">
              <summary>
-             Generates a new exhibition with the specified parameters.
+             Generates a new room of similar exhibits with the specified parameters.
              </summary>
              <remarks>
              
              </remarks>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
+             <param name="similarityGenerationRequest">The generation configuration object as JSON string.</param>
+             <returns>Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomSimilarWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest)">
+             <summary>
+             Generates a new room of similar exhibits with the specified parameters.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="similarityGenerationRequest">The generation configuration object as JSON string.</param>
+             <returns>ApiResponse of Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomSom(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest)">
+             <summary>
+             Generates a new room using self-organizing maps with the specified parameters.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="somGenerationRequest">The generation configuration object as JSON string.</param>
+             <returns>Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomSomWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest)">
+             <summary>
+             Generates a new room using self-organizing maps with the specified parameters.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="somGenerationRequest">The generation configuration object as JSON string.</param>
+             <returns>ApiResponse of Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateExhibitionAsync(System.Threading.CancellationToken)">
+             <summary>
+             Generates a new, empty exhibition.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
              <returns>Task of Exhibition</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateExhibitionWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest,System.Threading.CancellationToken)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateExhibitionWithHttpInfoAsync(System.Threading.CancellationToken)">
              <summary>
-             Generates a new exhibition with the specified parameters.
+             Generates a new, empty exhibition.
              </summary>
              <remarks>
              
              </remarks>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
              <returns>Task of ApiResponse (Exhibition)</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest,System.Threading.CancellationToken)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomRandomAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest,System.Threading.CancellationToken)">
              <summary>
-             Generates a new room with the specified parameters.
+             Generates a new room of random exhibits with the specified parameters.
              </summary>
              <remarks>
              
              </remarks>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
+             <param name="randomGenerationRequest">The generation configuration object as JSON string.</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
              <returns>Task of Room</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest,System.Threading.CancellationToken)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomRandomWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest,System.Threading.CancellationToken)">
              <summary>
-             Generates a new room with the specified parameters.
+             Generates a new room of random exhibits with the specified parameters.
              </summary>
              <remarks>
              
              </remarks>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
+             <param name="randomGenerationRequest">The generation configuration object as JSON string.</param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of ApiResponse (Room)</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomSimilarAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest,System.Threading.CancellationToken)">
+             <summary>
+             Generates a new room of similar exhibits with the specified parameters.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="similarityGenerationRequest">The generation configuration object as JSON string.</param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomSimilarWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest,System.Threading.CancellationToken)">
+             <summary>
+             Generates a new room of similar exhibits with the specified parameters.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="similarityGenerationRequest">The generation configuration object as JSON string.</param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of ApiResponse (Room)</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomSomAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest,System.Threading.CancellationToken)">
+             <summary>
+             Generates a new room using self-organizing maps with the specified parameters.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="somGenerationRequest">The generation configuration object as JSON string.</param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IGenerationApi.PostApiGenerateRoomSomWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest,System.Threading.CancellationToken)">
+             <summary>
+             Generates a new room using self-organizing maps with the specified parameters.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="somGenerationRequest">The generation configuration object as JSON string.</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
              <returns>Task of ApiResponse (Room)</returns>
             </member>
@@ -916,71 +1004,135 @@
              <param name="value">Header field value.</param>
              <returns></returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateExhibition(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateExhibition">
              <summary>
-             Generates a new exhibition with the specified parameters. 
+             Generates a new, empty exhibition. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
              <returns>Exhibition</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateExhibitionWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateExhibitionWithHttpInfo">
              <summary>
-             Generates a new exhibition with the specified parameters. 
+             Generates a new, empty exhibition. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
              <returns>ApiResponse of Exhibition</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateExhibitionAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest,System.Threading.CancellationToken)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateExhibitionAsync(System.Threading.CancellationToken)">
              <summary>
-             Generates a new exhibition with the specified parameters. 
+             Generates a new, empty exhibition. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
              <returns>Task of Exhibition</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateExhibitionWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest,System.Threading.CancellationToken)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateExhibitionWithHttpInfoAsync(System.Threading.CancellationToken)">
              <summary>
-             Generates a new exhibition with the specified parameters. 
+             Generates a new, empty exhibition. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
              <returns>Task of ApiResponse (Exhibition)</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoom(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomRandom(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest)">
              <summary>
-             Generates a new room with the specified parameters. 
+             Generates a new room of random exhibits with the specified parameters. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
+             <param name="randomGenerationRequest">The generation configuration object as JSON string.</param>
              <returns>Room</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomRandomWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest)">
              <summary>
-             Generates a new room with the specified parameters. 
+             Generates a new room of random exhibits with the specified parameters. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
+             <param name="randomGenerationRequest">The generation configuration object as JSON string.</param>
              <returns>ApiResponse of Room</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest,System.Threading.CancellationToken)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomRandomAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest,System.Threading.CancellationToken)">
              <summary>
-             Generates a new room with the specified parameters. 
+             Generates a new room of random exhibits with the specified parameters. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
+             <param name="randomGenerationRequest">The generation configuration object as JSON string.</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
              <returns>Task of Room</returns>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest,System.Threading.CancellationToken)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomRandomWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest,System.Threading.CancellationToken)">
              <summary>
-             Generates a new room with the specified parameters. 
+             Generates a new room of random exhibits with the specified parameters. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
-             <param name="generationRequest">The generation configuration object as JSON string.</param>
+             <param name="randomGenerationRequest">The generation configuration object as JSON string.</param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of ApiResponse (Room)</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomSimilar(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest)">
+             <summary>
+             Generates a new room of similar exhibits with the specified parameters. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="similarityGenerationRequest">The generation configuration object as JSON string.</param>
+             <returns>Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomSimilarWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest)">
+             <summary>
+             Generates a new room of similar exhibits with the specified parameters. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="similarityGenerationRequest">The generation configuration object as JSON string.</param>
+             <returns>ApiResponse of Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomSimilarAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest,System.Threading.CancellationToken)">
+             <summary>
+             Generates a new room of similar exhibits with the specified parameters. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="similarityGenerationRequest">The generation configuration object as JSON string.</param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomSimilarWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest,System.Threading.CancellationToken)">
+             <summary>
+             Generates a new room of similar exhibits with the specified parameters. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="similarityGenerationRequest">The generation configuration object as JSON string.</param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of ApiResponse (Room)</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomSom(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest)">
+             <summary>
+             Generates a new room using self-organizing maps with the specified parameters. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="somGenerationRequest">The generation configuration object as JSON string.</param>
+             <returns>Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomSomWithHttpInfo(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest)">
+             <summary>
+             Generates a new room using self-organizing maps with the specified parameters. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="somGenerationRequest">The generation configuration object as JSON string.</param>
+             <returns>ApiResponse of Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomSomAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest,System.Threading.CancellationToken)">
+             <summary>
+             Generates a new room using self-organizing maps with the specified parameters. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="somGenerationRequest">The generation configuration object as JSON string.</param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of Room</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.GenerationApi.PostApiGenerateRoomSomWithHttpInfoAsync(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest,System.Threading.CancellationToken)">
+             <summary>
+             Generates a new room using self-organizing maps with the specified parameters. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="somGenerationRequest">The generation configuration object as JSON string.</param>
              <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
              <returns>Task of ApiResponse (Room)</returns>
             </member>
@@ -1044,120 +1196,6 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.ExhibitionSummary.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
-             <summary>
-             To validate all properties of the instance
-             </summary>
-             <param name="validationContext">Validation context</param>
-             <returns>Validation Result</returns>
-            </member>
-        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest">
-             <summary>
-             GenerationRequest
-             </summary>
-            </member>
-        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.GenTypeEnum">
-             <summary>
-             Defines GenType
-             </summary>
-            </member>
-        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.GenTypeEnum.SEMANTICSOM">
-             <summary>
-             Enum SEMANTICSOM for value: SEMANTIC_SOM
-             </summary>
-            </member>
-        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.GenTypeEnum.VISUALSOM">
-             <summary>
-             Enum VISUALSOM for value: VISUAL_SOM
-             </summary>
-            </member>
-        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.GenTypeEnum.SEMANTICSIMILARITY">
-             <summary>
-             Enum SEMANTICSIMILARITY for value: SEMANTIC_SIMILARITY
-             </summary>
-            </member>
-        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.GenTypeEnum.VISUALSIMILARITY">
-             <summary>
-             Enum VISUALSIMILARITY for value: VISUAL_SIMILARITY
-             </summary>
-            </member>
-        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.GenTypeEnum.RANDOM">
-             <summary>
-             Enum RANDOM for value: RANDOM
-             </summary>
-            </member>
-        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.GenType">
-             <summary>
-             Gets or Sets GenType
-             </summary>
-            </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.#ctor">
-             <summary>
-             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest" /> class.
-             </summary>
-            </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.#ctor(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.GenTypeEnum,System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.Int32)">
-             <summary>
-             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest" /> class.
-             </summary>
-             <param name="genType">genType (required).</param>
-             <param name="idList">idList (required).</param>
-             <param name="height">height (required).</param>
-             <param name="width">width (required).</param>
-             <param name="seed">seed (required).</param>
-            </member>
-        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.IdList">
-             <summary>
-             Gets or Sets IdList
-             </summary>
-            </member>
-        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.Height">
-             <summary>
-             Gets or Sets Height
-             </summary>
-            </member>
-        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.Width">
-             <summary>
-             Gets or Sets Width
-             </summary>
-            </member>
-        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.Seed">
-             <summary>
-             Gets or Sets Seed
-             </summary>
-            </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.ToString">
-             <summary>
-             Returns the string presentation of the object
-             </summary>
-             <returns>String presentation of the object</returns>
-            </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.ToJson">
-             <summary>
-             Returns the JSON string presentation of the object
-             </summary>
-             <returns>JSON string presentation of the object</returns>
-            </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.Equals(System.Object)">
-             <summary>
-             Returns true if objects are equal
-             </summary>
-             <param name="input">Object to be compared</param>
-             <returns>Boolean</returns>
-            </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.Equals(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest)">
-             <summary>
-             Returns true if GenerationRequest instances are equal
-             </summary>
-             <param name="input">Instance of GenerationRequest to be compared</param>
-             <returns>Boolean</returns>
-            </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.GetHashCode">
-             <summary>
-             Gets the hash code
-             </summary>
-             <returns>Hash code</returns>
-            </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.GenerationRequest.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -1284,6 +1322,78 @@
              <param name="validationContext">Validation context</param>
              <returns>Validation Result</returns>
             </member>
+        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest">
+             <summary>
+             RandomGenerationRequest
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest" /> class.
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.#ctor(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification,System.Collections.Generic.List{System.String},System.Int32)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest" /> class.
+             </summary>
+             <param name="roomSpec">roomSpec (required).</param>
+             <param name="idList">idList (required).</param>
+             <param name="seed">seed (required).</param>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.RoomSpec">
+             <summary>
+             Gets or Sets RoomSpec
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.IdList">
+             <summary>
+             Gets or Sets IdList
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.Seed">
+             <summary>
+             Gets or Sets Seed
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.Equals(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest)">
+             <summary>
+             Returns true if RandomGenerationRequest instances are equal
+             </summary>
+             <param name="input">Instance of RandomGenerationRequest to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RandomGenerationRequest.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
         <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.Vector3f">
              <summary>
              Vector3f
@@ -1350,6 +1460,72 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.Vector3f.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification">
+             <summary>
+             RoomSpecification
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification" /> class.
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.#ctor(System.Int32,System.Int32)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification" /> class.
+             </summary>
+             <param name="height">height (required).</param>
+             <param name="width">width (required).</param>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.Height">
+             <summary>
+             Gets or Sets Height
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.Width">
+             <summary>
+             Gets or Sets Width
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.Equals(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification)">
+             <summary>
+             Returns true if RoomSpecification instances are equal
+             </summary>
+             <param name="input">Instance of RoomSpecification to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -1453,6 +1629,99 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.Wall.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest">
+             <summary>
+             SomGenerationRequest
+             </summary>
+            </member>
+        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenTypeEnum">
+             <summary>
+             Defines GenType
+             </summary>
+            </member>
+        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenTypeEnum.SEMANTIC">
+             <summary>
+             Enum SEMANTIC for value: SEMANTIC
+             </summary>
+            </member>
+        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenTypeEnum.VISUAL">
+             <summary>
+             Enum VISUAL for value: VISUAL
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenType">
+             <summary>
+             Gets or Sets GenType
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest" /> class.
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.#ctor(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification,Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenTypeEnum,System.Collections.Generic.List{System.String},System.Int32)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest" /> class.
+             </summary>
+             <param name="roomSpec">roomSpec (required).</param>
+             <param name="genType">genType (required).</param>
+             <param name="idList">idList (required).</param>
+             <param name="seed">seed (required).</param>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.RoomSpec">
+             <summary>
+             Gets or Sets RoomSpec
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.IdList">
+             <summary>
+             Gets or Sets IdList
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.Seed">
+             <summary>
+             Gets or Sets Seed
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.Equals(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest)">
+             <summary>
+             Returns true if SomGenerationRequest instances are equal
+             </summary>
+             <param name="input">Instance of SomGenerationRequest to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>
@@ -1856,6 +2125,93 @@
              <returns>Hash code</returns>
             </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.ListExhibitionsResponse.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+             <summary>
+             To validate all properties of the instance
+             </summary>
+             <param name="validationContext">Validation context</param>
+             <returns>Validation Result</returns>
+            </member>
+        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest">
+             <summary>
+             SimilarityGenerationRequest
+             </summary>
+            </member>
+        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenTypeEnum">
+             <summary>
+             Defines GenType
+             </summary>
+            </member>
+        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenTypeEnum.SEMANTIC">
+             <summary>
+             Enum SEMANTIC for value: SEMANTIC
+             </summary>
+            </member>
+        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenTypeEnum.VISUAL">
+             <summary>
+             Enum VISUAL for value: VISUAL
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenType">
+             <summary>
+             Gets or Sets GenType
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest" /> class.
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.#ctor(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification,Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenTypeEnum,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest" /> class.
+             </summary>
+             <param name="roomSpec">roomSpec (required).</param>
+             <param name="genType">genType (required).</param>
+             <param name="objectId">objectId (required).</param>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.RoomSpec">
+             <summary>
+             Gets or Sets RoomSpec
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.ObjectId">
+             <summary>
+             Gets or Sets ObjectId
+             </summary>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.ToString">
+             <summary>
+             Returns the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.ToJson">
+             <summary>
+             Returns the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.Equals(System.Object)">
+             <summary>
+             Returns true if objects are equal
+             </summary>
+             <param name="input">Object to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.Equals(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest)">
+             <summary>
+             Returns true if SimilarityGenerationRequest instances are equal
+             </summary>
+             <param name="input">Instance of SimilarityGenerationRequest to be compared</param>
+             <returns>Boolean</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GetHashCode">
+             <summary>
+             Gets the hash code
+             </summary>
+             <returns>Hash code</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.System#ComponentModel#DataAnnotations#IValidatableObject#Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
              <summary>
              To validate all properties of the instance
              </summary>

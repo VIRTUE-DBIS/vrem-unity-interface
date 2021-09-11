@@ -316,19 +316,60 @@
         }
       }
     },
-    "/api/generate/room": {
+    "/api/generate/exhibition": {
       "post": {
         "tags": [
           "Generation"
         ],
-        "summary": "Generates a new room with the specified parameters.",
-        "operationId": "postApiGenerateRoom",
+        "summary": "Generates a new, empty exhibition.",
+        "operationId": "postApiGenerateExhibition",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Exhibition"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/generate/room/random": {
+      "post": {
+        "tags": [
+          "Generation"
+        ],
+        "summary": "Generates a new room of random exhibits with the specified parameters.",
+        "operationId": "postApiGenerateRoomRandom",
         "requestBody": {
           "description": "The generation configuration object as JSON string.",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GenerationRequest"
+                "$ref": "#/components/schemas/RandomGenerationRequest"
               }
             }
           },
@@ -368,19 +409,19 @@
         }
       }
     },
-    "/api/generate/exhibition": {
+    "/api/generate/room/similar": {
       "post": {
         "tags": [
           "Generation"
         ],
-        "summary": "Generates a new exhibition with the specified parameters.",
-        "operationId": "postApiGenerateExhibition",
+        "summary": "Generates a new room of similar exhibits with the specified parameters.",
+        "operationId": "postApiGenerateRoomSimilar",
         "requestBody": {
           "description": "The generation configuration object as JSON string.",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GenerationRequest"
+                "$ref": "#/components/schemas/SimilarityGenerationRequest"
               }
             }
           },
@@ -392,7 +433,59 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Exhibition"
+                  "$ref": "#/components/schemas/Room"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/generate/room/som": {
+      "post": {
+        "tags": [
+          "Generation"
+        ],
+        "summary": "Generates a new room using self-organizing maps with the specified parameters.",
+        "operationId": "postApiGenerateRoomSom",
+        "requestBody": {
+          "description": "The generation configuration object as JSON string.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SomGenerationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
                 }
               }
             }
@@ -678,25 +771,16 @@
           }
         }
       },
-      "GenerationRequest": {
+      "RandomGenerationRequest": {
         "required": [
-          "genType",
-          "height",
           "idList",
-          "seed",
-          "width"
+          "roomSpec",
+          "seed"
         ],
         "type": "object",
         "properties": {
-          "genType": {
-            "type": "string",
-            "enum": [
-              "SEMANTIC_SOM",
-              "VISUAL_SOM",
-              "SEMANTIC_SIMILARITY",
-              "VISUAL_SIMILARITY",
-              "RANDOM"
-            ]
+          "roomSpec": {
+            "$ref": "#/components/schemas/RoomSpecification"
           },
           "idList": {
             "type": "array",
@@ -704,6 +788,19 @@
               "type": "string"
             }
           },
+          "seed": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "RoomSpecification": {
+        "required": [
+          "height",
+          "width"
+        ],
+        "type": "object",
+        "properties": {
           "height": {
             "type": "integer",
             "format": "int32"
@@ -711,6 +808,56 @@
           "width": {
             "type": "integer",
             "format": "int32"
+          }
+        }
+      },
+      "SimilarityGenerationRequest": {
+        "required": [
+          "genType",
+          "objectId",
+          "roomSpec"
+        ],
+        "type": "object",
+        "properties": {
+          "roomSpec": {
+            "$ref": "#/components/schemas/RoomSpecification"
+          },
+          "genType": {
+            "type": "string",
+            "enum": [
+              "SEMANTIC",
+              "VISUAL"
+            ]
+          },
+          "objectId": {
+            "type": "string"
+          }
+        }
+      },
+      "SomGenerationRequest": {
+        "required": [
+          "genType",
+          "idList",
+          "roomSpec",
+          "seed"
+        ],
+        "type": "object",
+        "properties": {
+          "roomSpec": {
+            "$ref": "#/components/schemas/RoomSpecification"
+          },
+          "genType": {
+            "type": "string",
+            "enum": [
+              "SEMANTIC",
+              "VISUAL"
+            ]
+          },
+          "idList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "seed": {
             "type": "integer",
@@ -721,3 +868,4 @@
     }
   }
 }
+
