@@ -54,7 +54,7 @@ task purgeLibs(type: Delete) {
     mustRunAfter buildOpenApi
 
     delete "$genFolder/bin/JsonSubTypes.dll"
-    delete "$genFolder/bin/Newtonsoft.Json.dll"
+    // delete "$genFolder/bin/Newtonsoft.Json.dll"
 }
 
 task deployLibs(type: Copy) {
