@@ -838,6 +838,7 @@
         "required": [
           "genType",
           "idList",
+          "numEpochs",
           "roomSpec",
           "seed"
         ],
@@ -862,10 +863,13 @@
           "seed": {
             "type": "integer",
             "format": "int32"
+          },
+          "numEpochs": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       }
     }
   }
 }
-
