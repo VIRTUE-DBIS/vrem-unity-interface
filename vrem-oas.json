@@ -5,12 +5,54 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/content": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "summary": "Retrieves exhibit content (e.g., an image) based on a url via query parameter.",
+        "operationId": "getApiContent",
+        "parameters": [
+          {
+            "name": "path",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/content/{path}": {
       "get": {
         "tags": [
           "Content"
         ],
-        "summary": "Retrieves exhibit content (e.g., an image) based on a url.",
+        "summary": "Retrieves exhibit content (e.g., an image) based on a url via path parameter.",
         "operationId": "getApiContentWithPath",
         "parameters": [
           {
@@ -823,11 +865,7 @@
             "$ref": "#/components/schemas/RoomSpecification"
           },
           "genType": {
-            "type": "string",
-            "enum": [
-              "SEMANTIC",
-              "VISUAL"
-            ]
+            "type": "string"
           },
           "objectId": {
             "type": "string"
@@ -848,11 +886,7 @@
             "$ref": "#/components/schemas/RoomSpecification"
           },
           "genType": {
-            "type": "string",
-            "enum": [
-              "SEMANTIC",
-              "VISUAL"
-            ]
+            "type": "string"
           },
           "idList": {
             "type": "array",
@@ -873,3 +907,4 @@
     }
   }
 }
+

@@ -688,32 +688,12 @@
              SimilarityGenerationRequest
              </summary>
             </member>
-        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenTypeEnum">
-             <summary>
-             Defines GenType
-             </summary>
-            </member>
-        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenTypeEnum.SEMANTIC">
-             <summary>
-             Enum SEMANTIC for value: SEMANTIC
-             </summary>
-            </member>
-        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenTypeEnum.VISUAL">
-             <summary>
-             Enum VISUAL for value: VISUAL
-             </summary>
-            </member>
-        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenType">
-             <summary>
-             Gets or Sets GenType
-             </summary>
-            </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.#ctor">
              <summary>
              Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest" /> class.
              </summary>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.#ctor(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification,Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenTypeEnum,System.String)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.#ctor(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification,System.String,System.String)">
              <summary>
              Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest" /> class.
              </summary>
@@ -724,6 +704,11 @@
         <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.RoomSpec">
              <summary>
              Gets or Sets RoomSpec
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.GenType">
+             <summary>
+             Gets or Sets GenType
              </summary>
             </member>
         <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SimilarityGenerationRequest.ObjectId">
@@ -914,32 +899,12 @@
              SomGenerationRequest
              </summary>
             </member>
-        <member name="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenTypeEnum">
-             <summary>
-             Defines GenType
-             </summary>
-            </member>
-        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenTypeEnum.SEMANTIC">
-             <summary>
-             Enum SEMANTIC for value: SEMANTIC
-             </summary>
-            </member>
-        <member name="F:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenTypeEnum.VISUAL">
-             <summary>
-             Enum VISUAL for value: VISUAL
-             </summary>
-            </member>
-        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenType">
-             <summary>
-             Gets or Sets GenType
-             </summary>
-            </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.#ctor">
              <summary>
              Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest" /> class.
              </summary>
             </member>
-        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.#ctor(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification,Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenTypeEnum,System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.#ctor(Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.RoomSpecification,System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
              <summary>
              Initializes a new instance of the <see cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest" /> class.
              </summary>
@@ -952,6 +917,11 @@
         <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.RoomSpec">
              <summary>
              Gets or Sets RoomSpec
+             </summary>
+            </member>
+        <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.GenType">
+             <summary>
+             Gets or Sets GenType
              </summary>
             </member>
         <member name="P:Ch.Unibas.Dmi.Dbis.Vrem.Client.Model.SomGenerationRequest.IdList">
@@ -2292,9 +2262,31 @@
              Represents a collection of functions to interact with the API endpoints
              </summary>
             </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IContentApi.GetApiContent(System.String)">
+             <summary>
+             Retrieves exhibit content (e.g., an image) based on a url via query parameter.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="path"></param>
+             <returns>System.IO.Stream</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IContentApi.GetApiContentWithHttpInfo(System.String)">
+             <summary>
+             Retrieves exhibit content (e.g., an image) based on a url via query parameter.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="path"></param>
+             <returns>ApiResponse of System.IO.Stream</returns>
+            </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IContentApi.GetApiContentWithPath(System.String)">
              <summary>
-             Retrieves exhibit content (e.g., an image) based on a url.
+             Retrieves exhibit content (e.g., an image) based on a url via path parameter.
              </summary>
              <remarks>
              
@@ -2305,7 +2297,7 @@
             </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IContentApi.GetApiContentWithPathWithHttpInfo(System.String)">
              <summary>
-             Retrieves exhibit content (e.g., an image) based on a url.
+             Retrieves exhibit content (e.g., an image) based on a url via path parameter.
              </summary>
              <remarks>
              
@@ -2314,9 +2306,33 @@
              <param name="path">The path of the exhibit's content.</param>
              <returns>ApiResponse of System.IO.Stream</returns>
             </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IContentApi.GetApiContentAsync(System.String,System.Threading.CancellationToken)">
+             <summary>
+             Retrieves exhibit content (e.g., an image) based on a url via query parameter.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="path"></param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of System.IO.Stream</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IContentApi.GetApiContentWithHttpInfoAsync(System.String,System.Threading.CancellationToken)">
+             <summary>
+             Retrieves exhibit content (e.g., an image) based on a url via query parameter.
+             </summary>
+             <remarks>
+             
+             </remarks>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="path"></param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of ApiResponse (System.IO.Stream)</returns>
+            </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IContentApi.GetApiContentWithPathAsync(System.String,System.Threading.CancellationToken)">
              <summary>
-             Retrieves exhibit content (e.g., an image) based on a url.
+             Retrieves exhibit content (e.g., an image) based on a url via path parameter.
              </summary>
              <remarks>
              
@@ -2328,7 +2344,7 @@
             </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.IContentApi.GetApiContentWithPathWithHttpInfoAsync(System.String,System.Threading.CancellationToken)">
              <summary>
-             Retrieves exhibit content (e.g., an image) based on a url.
+             Retrieves exhibit content (e.g., an image) based on a url via path parameter.
              </summary>
              <remarks>
              
@@ -2400,9 +2416,43 @@
              <param name="value">Header field value.</param>
              <returns></returns>
             </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.ContentApi.GetApiContent(System.String)">
+             <summary>
+             Retrieves exhibit content (e.g., an image) based on a url via query parameter. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="path"></param>
+             <returns>System.IO.Stream</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.ContentApi.GetApiContentWithHttpInfo(System.String)">
+             <summary>
+             Retrieves exhibit content (e.g., an image) based on a url via query parameter. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="path"></param>
+             <returns>ApiResponse of System.IO.Stream</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.ContentApi.GetApiContentAsync(System.String,System.Threading.CancellationToken)">
+             <summary>
+             Retrieves exhibit content (e.g., an image) based on a url via query parameter. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="path"></param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of System.IO.Stream</returns>
+            </member>
+        <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.ContentApi.GetApiContentWithHttpInfoAsync(System.String,System.Threading.CancellationToken)">
+             <summary>
+             Retrieves exhibit content (e.g., an image) based on a url via query parameter. 
+             </summary>
+             <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
+             <param name="path"></param>
+             <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+             <returns>Task of ApiResponse (System.IO.Stream)</returns>
+            </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.ContentApi.GetApiContentWithPath(System.String)">
              <summary>
-             Retrieves exhibit content (e.g., an image) based on a url. 
+             Retrieves exhibit content (e.g., an image) based on a url via path parameter. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="path">The path of the exhibit's content.</param>
@@ -2410,7 +2460,7 @@
             </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.ContentApi.GetApiContentWithPathWithHttpInfo(System.String)">
              <summary>
-             Retrieves exhibit content (e.g., an image) based on a url. 
+             Retrieves exhibit content (e.g., an image) based on a url via path parameter. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="path">The path of the exhibit's content.</param>
@@ -2418,7 +2468,7 @@
             </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.ContentApi.GetApiContentWithPathAsync(System.String,System.Threading.CancellationToken)">
              <summary>
-             Retrieves exhibit content (e.g., an image) based on a url. 
+             Retrieves exhibit content (e.g., an image) based on a url via path parameter. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="path">The path of the exhibit's content.</param>
@@ -2427,7 +2477,7 @@
             </member>
         <member name="M:Ch.Unibas.Dmi.Dbis.Vrem.Client.Api.ContentApi.GetApiContentWithPathWithHttpInfoAsync(System.String,System.Threading.CancellationToken)">
              <summary>
-             Retrieves exhibit content (e.g., an image) based on a url. 
+             Retrieves exhibit content (e.g., an image) based on a url via path parameter. 
              </summary>
              <exception cref="T:Ch.Unibas.Dmi.Dbis.Vrem.Client.Client.ApiException">Thrown when fails to make API call</exception>
              <param name="path">The path of the exhibit's content.</param>
