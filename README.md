@@ -10,11 +10,11 @@ To include the latest version of this package in your Unity project, add the fol
 file:
 
 ```json
-    "ch.unibas.dmi.dbis.vrem.client": "ssh://git@github.com/simonpeterhans/vrem-unity-interface.git#main",
+    "ch.unibas.dmi.dbis.vrem.client": "ssh://git@github.com:VIRTUE-DBIS/vrem-unity-interface.git#main",
 ```
 
 Alternatively you can also use the Unity Package Manager and add the
-URL `ssh://git@github.com/simonpeterhans/vrem-unity-interface.git#main`.
+URL `git@github.com:VIRTUE-DBIS/vrem-unity-interface.git#main`.
 
 ## Development
 
