@@ -5,7 +5,7 @@ plugins {
 }
 
 def genFolder = "$rootDir/generated"
-def rtFolder = "$rootDir/Runtime"
+def rtFolder = "$rootDir/Runtime/Libs"
 
 task clean(type: Delete) {
     delete "$genFolder"
@@ -50,22 +50,16 @@ task buildOpenApi(type: Exec) {
     }
 }
 
-task purgeLibs(type: Delete) {
-    mustRunAfter buildOpenApi
-
-    delete "$genFolder/bin/JsonSubTypes.dll"
-    // delete "$genFolder/bin/Newtonsoft.Json.dll"
-}
-
 task deployLibs(type: Copy) {
     dependsOn buildOpenApi
-    dependsOn purgeLibs
 
     from file("$genFolder/bin")
     into file("$rtFolder")
 
     // Automatically rename everything to prevent Unity from identifying packages as duplicates.
-    rename('(.*)\\.([a-zA-Z0-9_-]*)', '$1.Vrem.$2')
+    rename("RestSharp.dll", "RestSharp.Vrem.dll")
+    rename("Newtonsoft.Json.dll", "Newtonsoft.Json.Vrem.dll")
+    rename("JsonSubTypes.dll", "JsonSubTypes.Vrem.dll")
 }
 
 task deployLink(type: Copy) {
